@@ -1,6 +1,8 @@
 name: CI
 
-on: [pull_request]
+on:
+  schedule:
+    - cron:  '*/5 * * * *'
 
 jobs:
   build:
@@ -9,12 +11,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: update hoge.txt
+    - name: update hogehoge.txt
       run: |
-        echo date > hoge.txt
+        git switch master
+        echo date > hogehoge.txt
         git config --global user.email "ci-master@example.com"
         git config --global user.name "CI Master"
         git add .
-        git commit -m "update hoge.txt"
+        git commit -m "update hogehoge.txt"
         git push
         echo finish!

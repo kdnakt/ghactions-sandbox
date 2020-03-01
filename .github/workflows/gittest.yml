@@ -16,5 +16,7 @@ jobs:
         git config --global user.name "CI Master"
         git add .
         git commit -m "update hoge.txt"
-        git push
+        echo ** branch **
+        echo ${GITHUB_REF##*/}
+        git push origin HEAD:${GITHUB_REF##*/}
         echo finish!

@@ -9,9 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: update hoge.txt
+    - name: update hogehoge.txt
       run: |
-        echo date > hoge.txt
+        echo date > hogehoge.txt
         git config --global user.email "ci-master@example.com"
         git config --global user.name "CI Master"
         git add .

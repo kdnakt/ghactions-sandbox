@@ -29,3 +29,6 @@ jobs:
 
     - name: Show result
       run: ls -la
+
+    - name: Execute build artifact
+      run: ./ghactions-sandbox
